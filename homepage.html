@@ -1,1 +1,515 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Coolum Thai Spice</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #f2b632;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f2b632;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+                url("COOLUM THAI SPICE Home_files/slider-img_9uXS.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 9vw, 100px);
+            line-height: 0.9;
+            color: #f2b632;
+            text-shadow: 3px 3px 10px black;
+        }
+
+        .hero h2 {
+            margin-top: 25px;
+            font-size: 28px;
+        }
+
+        .hero p {
+            margin: 20px auto;
+            max-width: 650px;
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #f2b632;
+            color: #111;
+        }
+
+        .secondary {
+            border: 2px solid #f2b632;
+            color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            opacity: 0.85;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            color: #f2b632;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #bbb;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #181818;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-container p {
+            color: #ccc;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        /* HOURS */
+        .hours {
+            background: #111;
+        }
+
+        .hours-box {
+            max-width: 600px;
+            margin: auto;
+            padding: 35px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .hours-box h3 {
+            color: #f2b632;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .hours-box p {
+            margin: 15px;
+            color: #ddd;
+        }
+
+        /* REVIEWS */
+        .reviews {
+            background: #181818;
+        }
+
+        .review-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .review {
+            background: #222;
+            padding: 30px;
+            border-radius: 10px;
+            border-top: 3px solid #f2b632;
+        }
+
+        .review h3 {
+            color: #f2b632;
+            margin-bottom: 15px;
+        }
+
+        .review p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background: #111;
+        }
+
+        .contact-info {
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        .contact-info strong {
+            color: #f2b632;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 30px;
+            text-align: center;
+            background: #050505;
+            color: #888;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">COOLUM THAI SPICE</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#hours">Hours</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                COOLUM<br>
+                THAI<br>
+                SPICE
+            </h1>
+
+            <h2>Authentic Thai Cuisine</h2>
+
+            <p>
+                Licensed Restaurant — Dine In or Takeaway.
+                Enjoy delicious Thai cuisine using legendary recipes
+                and crisp, fresh ingredients.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="button primary"
+                    href="https://coolumthaispice.my-order.online/menu"
+                    target="_blank">
+                    ORDER ONLINE
+                </a>
+
+                <a
+                    class="button secondary"
+                    href="https://coolumthaispice.my-order.online/#reservation"
+                    target="_blank">
+                    BOOK A TABLE
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <h2>About Us</h2>
+            <p>Authentic Thai food since 2002</p>
+        </div>
+
+        <div class="about-container">
+
+            <p>
+                Coolum Thai Spice is a well-established Thai restaurant
+                serving the Coolum community since 2002.
+                We take pride in preparing freshly made meals using
+                quality ingredients and legendary Thai recipes.
+            </p>
+
+            <br>
+
+            <p>
+                Whether you're dining in with friends and family
+                or taking your food home, we offer a large selection
+                of delicious Thai dishes at reasonable prices.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- OPENING HOURS -->
+    <section class="hours" id="hours">
+
+        <div class="section-title">
+            <h2>Opening Hours</h2>
+            <p>Come and enjoy a freshly prepared meal</p>
+        </div>
+
+        <div class="hours-box">
+
+            <h3>Restaurant Hours</h3>
+
+            <p>
+                <strong>Lunch</strong><br>
+                Friday, Saturday & Sunday<br>
+                12:00 PM – 2:00 PM
+            </p>
+
+            <p>
+                <strong>Dinner</strong><br>
+                Tuesday – Sunday<br>
+                5:00 PM – 8:30 PM
+            </p>
+
+            <p>
+                <strong>Phone</strong><br>
+                07 5446 2488
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+
+        <div class="section-title">
+            <h2>What Our Customers Say</h2>
+            <p>Reviews from our customers</p>
+        </div>
+
+        <div class="review-grid">
+
+            <div class="review">
+
+                <h3>★★★★★</h3>
+
+                <p>
+                    "Great Thai food, fresh and full of flavour and
+                    vegetables. The servings were generous and the
+                    staff were friendly and attentive."
+                </p>
+
+                <br>
+
+                <strong>— erryted, Tripadvisor</strong>
+
+            </div>
+
+
+            <div class="review">
+
+                <h3>★★★★★</h3>
+
+                <p>
+                    "Amazing!!! The food is simply divine.
+                    We enjoyed Red Curry Duck and Thai Prawn Fried
+                    rice. Cannot rave enough about the flavours
+                    and quality."
+                </p>
+
+                <br>
+
+                <strong>— PJS1958, Tripadvisor</strong>
+
+            </div>
+
+
+            <div class="review">
+
+                <h3>★★★★★</h3>
+
+                <p>
+                    "Fantastic meal. Each year when we visit Coolum,
+                    10 of us dine at Coolum Thai Spice. The meals are
+                    great and the service first class."
+                </p>
+
+                <br>
+
+                <strong>— funtimebrisbane, Tripadvisor</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you</p>
+        </div>
+
+        <div class="contact-info">
+            <strong>Phone:</strong> 07 5446 2488
+        </div>
+
+        <div class="contact-info">
+            <strong>Email:</strong>
+            accountsthaispice@yahoo.com
+        </div>
+
+        <div class="buttons">
+
+            <a
+                class="button primary"
+                href="https://coolumthaispice.my-order.online/menu"
+                target="_blank">
+                ORDER NOW
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Coolum Thai Spice
+        </p>
+
+        <p>
+            Licensed Restaurant • Dine In or Takeaway
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
+```
