@@ -1,1 +1,1293 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu | Coolum Thai Spice</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            color: #f2b632;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f2b632;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .menu-hero {
+            margin-top: 70px;
+
+            min-height: 380px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.7),
+                    rgba(0,0,0,0.8)
+                ),
+                url("COOLUM THAI SPICE Home_files/slider-img-2_9uXS.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .menu-hero h1 {
+            font-size: clamp(55px, 9vw, 90px);
+            color: #f2b632;
+            text-shadow: 3px 3px 10px black;
+        }
+
+        .menu-hero p {
+            margin-top: 15px;
+            color: #ddd;
+            font-size: 20px;
+        }
+
+        /* =========================
+           MENU NAVIGATION
+        ========================= */
+
+        .menu-navigation {
+            position: sticky;
+            top: 70px;
+            z-index: 900;
+
+            background: #181818;
+
+            padding: 15px;
+
+            border-bottom: 1px solid #333;
+        }
+
+        .menu-navigation ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            list-style: none;
+        }
+
+        .menu-navigation a {
+            display: block;
+
+            padding: 10px 18px;
+
+            color: white;
+            text-decoration: none;
+
+            border: 1px solid #555;
+            border-radius: 5px;
+
+            transition: 0.3s;
+        }
+
+        .menu-navigation a:hover {
+            background: #f2b632;
+            color: #111;
+            border-color: #f2b632;
+        }
+
+        /* =========================
+           MENU SECTION
+        ========================= */
+
+        .menu-section {
+            max-width: 1100px;
+            margin: auto;
+
+            padding: 80px 25px 20px;
+        }
+
+        .category-title {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        .category-title h2 {
+            color: #f2b632;
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        .category-title p {
+            color: #999;
+        }
+
+        /* =========================
+           MENU GRID
+        ========================= */
+
+        .menu-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: #1c1c1c;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            border-left: 3px solid #f2b632;
+
+            transition: 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-4px);
+
+            background: #222;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .item-top {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        .item-top h3 {
+            font-size: 20px;
+            color: white;
+        }
+
+        .price {
+            color: #f2b632;
+            font-size: 19px;
+            font-weight: bold;
+
+            white-space: nowrap;
+        }
+
+        .description {
+            margin-top: 12px;
+
+            color: #aaa;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 4px 8px;
+
+            font-size: 11px;
+
+            border-radius: 4px;
+
+            background: #333;
+
+            color: #f2b632;
+        }
+
+        /* =========================
+           ORDER BUTTON
+        ========================= */
+
+        .order-section {
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background: #181818;
+
+            margin-top: 70px;
+        }
+
+        .order-section h2 {
+            font-size: 35px;
+            color: #f2b632;
+            margin-bottom: 15px;
+        }
+
+        .order-section p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .order-button {
+            display: inline-block;
+
+            padding: 15px 35px;
+
+            background: #f2b632;
+
+            color: #111;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 5px;
+
+            transition: 0.3s;
+        }
+
+        .order-button:hover {
+            transform: translateY(-3px);
+            opacity: 0.85;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            background: #050505;
+
+            color: #888;
+        }
+
+        footer strong {
+            color: #f2b632;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            .menu-navigation {
+                top: 62px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-section {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .item-top h3 {
+                font-size: 17px;
+            }
+
+            .price {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            COOLUM THAI SPICE
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="menu.html">
+                    Menu
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         MENU HERO
+    ========================= -->
+
+    <section class="menu-hero">
+
+        <div>
+
+            <h1>OUR MENU</h1>
+
+            <p>
+                Freshly prepared authentic Thai cuisine
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENU CATEGORY NAVIGATION
+    ========================= -->
+
+    <div class="menu-navigation">
+
+        <ul>
+
+            <li>
+                <a href="#starters">
+                    Starters
+                </a>
+            </li>
+
+            <li>
+                <a href="#soups">
+                    Soups
+                </a>
+            </li>
+
+            <li>
+                <a href="#salads">
+                    Salads
+                </a>
+            </li>
+
+            <li>
+                <a href="#curries">
+                    Curries
+                </a>
+            </li>
+
+            <li>
+                <a href="#stirfry">
+                    Stir Fry
+                </a>
+            </li>
+
+            <li>
+                <a href="#noodles">
+                    Noodles
+                </a>
+            </li>
+
+            <li>
+                <a href="#rice">
+                    Rice
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- =========================
+         STARTERS
+    ========================= -->
+
+    <section class="menu-section" id="starters">
+
+        <div class="category-title">
+
+            <h2>Starters</h2>
+
+            <p>
+                Begin your meal with one of our Thai favourites
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Spring Rolls
+                    </h3>
+
+                    <span class="price">
+                        $12.50
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Three pieces. Vermicelli noodles with carrots,
+                    cabbage and mushroom in fine pastry, deep fried
+                    and served with sweet chilli sauce.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Fish Cakes
+                    </h3>
+
+                    <span class="price">
+                        $12.50
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Three pieces. Fresh fish blended with Thai spices
+                    and herbs, deep fried and served with sweet chilli sauce.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Curry Puffs
+                    </h3>
+
+                    <span class="price">
+                        $12.50
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Three pieces. Potato, carrots and peas with Thai
+                    spices, deep fried and served with sweet chilli sauce.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Satay Chicken
+                    </h3>
+
+                    <span class="price">
+                        $13.90
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Three pieces. Chicken breast marinated and grilled
+                    on a skewer with tasty peanut sauce.
+                </p>
+
+                <span class="tag">
+                    GF • CONTAINS NUTS
+                </span>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Mixed Entrée
+                    </h3>
+
+                    <span class="price">
+                        $13.90
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Four pieces — one fish cake, spring roll, curry puff
+                    and money bag, served with sweet chilli sauce.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Golden Tofu
+                    </h3>
+
+                    <span class="price">
+                        $12.50
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Twelve pieces of deep fried tofu served with
+                    sweet chilli sauce.
+                </p>
+
+                <span class="tag">
+                    VEGAN
+                </span>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Coconut Prawns
+                    </h3>
+
+                    <span class="price">
+                        $13.70
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Prawns coated with coconut batter, deep fried
+                    and served with sweet chilli sauce.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Calamari Rings
+                    </h3>
+
+                    <span class="price">
+                        $14.90
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Seasoned calamari, deep fried and served
+                    with sweet chilli sauce.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOUPS
+    ========================= -->
+
+    <section class="menu-section" id="soups">
+
+        <div class="category-title">
+
+            <h2>Soups</h2>
+
+            <p>
+                Warm and aromatic Thai soups
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Thai Laksa
+                    </h3>
+
+                    <span class="price">
+                        $14.50
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Spicy noodle soup with a rich and aromatic flavour.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Thai Noodles
+                    </h3>
+
+                    <span class="price">
+                        $14.80
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Sliced chicken or beef with flat noodles,
+                    bean shoots and herbs.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Tom Yum
+                    </h3>
+
+                    <span class="price">
+                        $13.70
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Traditional Thai hot and sour soup with lemongrass,
+                    mushroom, lime leaves, galangal and coriander.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Tom Kar
+                    </h3>
+
+                    <span class="price">
+                        $13.70
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Mild coconut milk soup with lemon juice.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SALADS
+    ========================= -->
+
+    <section class="menu-section" id="salads">
+
+        <div class="category-title">
+
+            <h2>Thai Salad</h2>
+
+            <p>
+                Fresh Thai salads packed with flavour
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Beef Salad — Yum Nua
+                    </h3>
+
+                    <span class="price">
+                        $20.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Sliced beef grilled with lemongrass, mint,
+                    coriander, lime leaves, onions and lemon juice.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CURRIES
+    ========================= -->
+
+    <section class="menu-section" id="curries">
+
+        <div class="category-title">
+
+            <h2>Classic Curries</h2>
+
+            <p>
+                Authentic Thai curries cooked with aromatic spices
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Massaman Curry
+                    </h3>
+
+                    <span class="price">
+                        $21.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Authentic Thai curry in coconut milk with
+                    tender beef or chicken, peanuts, potatoes and onions.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Green Curry
+                    </h3>
+
+                    <span class="price">
+                        $21.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Spicy coconut curry with bamboo shoots, capsicum,
+                    beans, kaffir lime leaves and basil.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Red Curry
+                    </h3>
+
+                    <span class="price">
+                        $21.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Spicy thick red coconut curry with vegetables.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Penang Curry
+                    </h3>
+
+                    <span class="price">
+                        $21.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Mild curry with vegetables and kaffir lime leaves.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         STIR FRY
+    ========================= -->
+
+    <section class="menu-section" id="stirfry">
+
+        <div class="category-title">
+
+            <h2>Stir Fried</h2>
+
+            <p>
+                Fresh vegetables and your choice of Thai flavours
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Cashew Nuts
+                    </h3>
+
+                    <span class="price">
+                        $21.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Cashew nuts and Asian vegetables stir fried together
+                    for a delicious combination of flavours.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Oyster Sauce
+                    </h3>
+
+                    <span class="price">
+                        $21.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Stir fried Asian greens with mushroom,
+                    onions and shallots.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NOODLES
+    ========================= -->
+
+    <section class="menu-section" id="noodles">
+
+        <div class="category-title">
+
+            <h2>Noodles</h2>
+
+            <p>
+                Classic Thai noodle favourites
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Pad Thai
+                    </h3>
+
+                    <span class="price">
+                        $18.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Famous Thai dish of flat noodles, egg and vegetables
+                    topped with crushed nuts.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Pad See Yu
+                    </h3>
+
+                    <span class="price">
+                        $18.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Stir fried rice noodles with sweet soy sauce,
+                    egg and Chinese broccoli.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Hokkien Noodles
+                    </h3>
+
+                    <span class="price">
+                        $18.60
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Stir fried noodles and vegetables with
+                    oyster sauce.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RICE
+    ========================= -->
+
+    <section class="menu-section" id="rice">
+
+        <div class="category-title">
+
+            <h2>Rice</h2>
+
+            <p>
+                Fragrant rice dishes and sides
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Thai Fried Rice
+                    </h3>
+
+                    <span class="price">
+                        $17.00
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Thai fried rice with your choice of protein,
+                    traditional spices and vegetables.
+                </p>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Steamed Jasmine Rice
+                    </h3>
+
+                    <span class="price">
+                        $6.00
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Fragrant steamed jasmine rice.
+                </p>
+
+                <span class="tag">
+                    GF • VEGAN
+                </span>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="item-top">
+
+                    <h3>
+                        Coconut Rice
+                    </h3>
+
+                    <span class="price">
+                        $7.50
+                    </span>
+
+                </div>
+
+                <p class="description">
+                    Fragrant jasmine rice infused with coconut.
+                </p>
+
+                <span class="tag">
+                    GF • VEGAN
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ORDER
+    ========================= -->
+
+    <section class="order-section">
+
+        <h2>Ready to Order?</h2>
+
+        <p>
+            Enjoy Coolum Thai Spice at home or in our restaurant.
+        </p>
+
+        <a
+            class="order-button"
+            href="https://coolumthaispice.my-order.online/menu"
+            target="_blank">
+
+            ORDER ONLINE
+
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            <strong>COOLUM THAI SPICE</strong>
+        </p>
+
+        <br>
+
+        <p>
+            07 5446 2488
+        </p>
+
+        <br>
+
+        <p>
+            Licensed Restaurant • Dine In or Takeaway
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Coolum Thai Spice
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
 
